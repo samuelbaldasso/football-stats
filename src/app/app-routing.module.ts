@@ -1,9 +1,17 @@
+import { HomePage } from './view/home/home.page';
+import { TeamsListComponent } from './view/teams-list/teams-list.component';
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
     path: 'home',
+    component: HomePage,
+    loadChildren: () => import('./view/home/home.module').then( m => m.HomePageModule)
+  },
+  {
+    path: 'teams',
+    component: TeamsListComponent,
     loadChildren: () => import('./view/home/home.module').then( m => m.HomePageModule)
   },
   {
