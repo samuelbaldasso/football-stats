@@ -1,4 +1,4 @@
-import { TeamsListComponent } from './../teams-list/teams-list.component';
+import { TeamsListComponent } from '../teams-list/teams-list.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomePage } from './home.page';
@@ -9,8 +9,9 @@ const routes: Routes = [
     component: HomePage,
   },
   {
-    path: ':id', component: TeamsListComponent
-  }
+  path: 'teams',
+  component: TeamsListComponent
+}
 ];
 
 @NgModule({

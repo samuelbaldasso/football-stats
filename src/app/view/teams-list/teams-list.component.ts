@@ -1,7 +1,9 @@
+import { element } from 'protractor';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Times } from '../../model/times';
-import { ApiService } from './../../controller/api.service';
+import { ApiService } from '../../controller/api.service';
 import { Component, OnInit } from '@angular/core';
+import { NavParams } from '@ionic/angular';
 
 @Component({
   selector: 'app-teams-list',
@@ -9,29 +11,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./teams-list.component.scss'],
 })
 export class TeamsListComponent implements OnInit {
-  appModal: Times[] = [];
-  team: any;
+  teamsList: any;
+  teams: Times[] = [];
+  constructor(private http: ApiService, private route: Router, private router: ActivatedRoute, private nav: NavParams) { }
 
-  constructor(private http: ApiService, private route: Router) { }
-
-  ngOnInit() {
-    this.getTeams();
+ngOnInit() {
+   this.teamsList = this.route.getCurrentNavigation().extras.queryParams;
+   this.teams = this.teamsList.map(el => el.name);
 }
-
-  getTeams(){
-    this.http.getAll().subscribe(data => {
-      data.leagues.map(el => {
-        el.teams.forEach(element => {
-          this.appModal.push({
-            id: element.id,
-            name: element.name,
-            city: element.city,
-            founded: element.founded,
-            details: element.details,
-            logo: element.logo
-          });
-        });
-      });
-    });
-  }
 }
