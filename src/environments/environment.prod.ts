@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  url: 'https://football-apis.herokuapp.com/api/v1/leagues'
 };
