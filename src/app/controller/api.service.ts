@@ -14,7 +14,8 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   getAll(): Observable<any>{
-    return this.http.get(api);
+    const url = `${api}/leagues`;
+    return this.http.get(url);
   }
 
 }
