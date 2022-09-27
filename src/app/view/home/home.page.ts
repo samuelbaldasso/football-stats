@@ -1,6 +1,8 @@
-import { Ligas } from './../../model/ligas';
+import { Observable } from 'rxjs';
+import { Ligas } from '../../model/ligas';
 import { ApiService } from './../../controller/api.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -9,10 +11,14 @@ import { Component, OnInit } from '@angular/core';
 
 export class HomePage implements OnInit{
   list: Ligas[] = [];
-
-  constructor(private http: ApiService) {}
+  leagues: Observable<any>;
+  page = 0;
+  loading: any;
+  constructor(private http: ApiService, private route: Router) {}
 
   ngOnInit(){
+    this.leagues = this.http.getAll();
+    this.leagues.subscribe(data => console.log(data));
     this.getNames();
   }
 
@@ -28,4 +34,6 @@ export class HomePage implements OnInit{
       });
     });
   }
+
+
 }

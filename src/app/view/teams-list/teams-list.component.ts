@@ -1,5 +1,5 @@
-import { Times } from 'src/app/model/times';
-import { Ligas } from './../../model/ligas';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Times } from '../../model/times';
 import { ApiService } from './../../controller/api.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -10,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TeamsListComponent implements OnInit {
   appModal: Times[] = [];
-  constructor(private http: ApiService) { }
+  team: any;
+
+  constructor(private http: ApiService, private route: Router) { }
 
   ngOnInit() {
+    this.getTeams();
+}
+
+  getTeams(){
     this.http.getAll().subscribe(data => {
       data.leagues.map(el => {
         el.teams.forEach(element => {
@@ -27,5 +33,5 @@ export class TeamsListComponent implements OnInit {
         });
       });
     });
-}
+  }
 }

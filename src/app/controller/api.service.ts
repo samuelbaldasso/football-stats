@@ -17,5 +17,4 @@ export class ApiService {
     const url = `${api}/leagues`;
     return this.http.get(url);
   }
-
 }
