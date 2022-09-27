@@ -1,13 +1,16 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Principais ligas mundiais de futebol
+     Ligas de futebol
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <div id="container" *ngFor="let item of list">
-    <button [routerLink]="item.id">{{item.name}}</button>
+    <button [routerLink]="item.id">
+      <img src="{{item.logo}}" alt="">
+      {{item.name}}
+    </button>
   </div>
 </ion-content>

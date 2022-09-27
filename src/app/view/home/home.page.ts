@@ -1,3 +1,4 @@
+import { Ligas } from './../../model/ligas';
 import { ApiService } from './../../controller/api.service';
 import { Component, OnInit } from '@angular/core';
 @Component({
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class HomePage implements OnInit{
-  list = [];
+  list: Ligas[] = [];
 
   constructor(private http: ApiService) {}
 
@@ -15,12 +16,14 @@ export class HomePage implements OnInit{
     this.getNames();
   }
 
-  getNames(){
+    getNames(){
     this.http.getAll().subscribe(data => {
       data.leagues.forEach(el => {
         this.list.push({
           id: el.id,
-          name: el.name
+          name: el.name,
+          country: el.country,
+          logo: el.logo
         });
       });
     });
