@@ -13,14 +13,20 @@ ion-content{
   justify-content: center;
 }
 
-#teamInfo{
+button{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 12px;
   color: #122215;
   border-radius: 20px;
   background-color: whitesmoke;
   padding: 24px;
   width: 300px;
+}
+
+button:hover{
+  background-color: #142536;
+  color: whitesmoke;
 }

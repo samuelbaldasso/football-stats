@@ -13,14 +13,19 @@ ion-content{
   justify-content: center;
 }
 
-#teamInfo{
+#playerInfo{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
   color: #122215;
   border-radius: 20px;
   background-color: whitesmoke;
   padding: 24px;
   width: 300px;
+}
+
+#playerInfo img{
+  border-radius: 50%;
 }

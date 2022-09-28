@@ -1,15 +1,15 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Teams
+      Players
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <div id="container" *ngFor="let item of list" (click)="redirectToTeamsPage(item)">
+  <div id="container" *ngFor="let item of player" (click)="redirectToPlayersPage(item)">
     <button>
-      {{item.name}}
+      {{item.firstname}}
     </button>
   </div>
 </ion-content>

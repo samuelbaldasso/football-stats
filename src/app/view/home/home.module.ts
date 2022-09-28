@@ -1,3 +1,6 @@
+import { PlayersInfoComponent } from './../players-info/players-info.component';
+import { IntroComponent } from './../intro/intro.component';
+import { PlayersListComponent } from './../players-list/players-list.component';
 import { TeamsListComponent } from './../teams-list/teams-list.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -15,6 +18,6 @@ import { HomePageRoutingModule } from './home-routing.module';
     IonicModule,
     HomePageRoutingModule
   ],
-  declarations: [HomePage, TeamsListComponent]
+  declarations: [HomePage, TeamsListComponent, PlayersListComponent, IntroComponent, PlayersInfoComponent]
 })
 export class HomePageModule {}

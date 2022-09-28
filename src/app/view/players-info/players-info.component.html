@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Teams Info
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div id="container" *ngIf="playerInfo">
+    <div id="playerInfo">
+      <img [ngClass]="{'ion-hide' : playerInfo.img === null}" src="{{playerInfo.img}}" alt="">
+      <h2>{{playerInfo.firstname}} {{playerInfo.lastname}}</h2>
+      <h3>{{playerInfo.birthday}}</h3>
+      <h3>{{playerInfo.age}} years old</h3>
+      <h3>{{playerInfo.weight}} kg</h3>
+      <h3>{{playerInfo.height}} cm</h3>
+      <h3>{{playerInfo.country.name}}</h3>
+      <h3>{{playerInfo.country.continent}}</h3>
+    </div>
+  </div>
+</ion-content>
+
