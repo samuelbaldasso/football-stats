@@ -10,7 +10,7 @@ const routes: Routes = [
     loadChildren: () => import('./view/home/home.module').then( m => m.HomePageModule)
   },
   {
-    path: 'teams',
+    path: 'info',
     component: TeamsListComponent,
     loadChildren: () => import('./view/home/home.module').then( m => m.HomePageModule)
   },

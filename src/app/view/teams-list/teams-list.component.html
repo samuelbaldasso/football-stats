@@ -1,5 +1,19 @@
-<ion-content fullscreen="true">
-  <div id="container" *ngFor="let item of teams">
-    <h2>{{item}}</h2>
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      SOCCER TEAMS
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div id="container" *ngIf="teamInfo">
+    <div id="teamInfo">
+      <img [ngClass]="{'ion-hide' : teamInfo.logo === null}" src="{{teamInfo.logo}}" alt="">
+      <h2>{{teamInfo.name}}</h2>
+      <h3>{{teamInfo.shortCode}}</h3>
+      <h3>{{teamInfo.country.name}}</h3>
+      <h3>{{teamInfo.country.continent}}</h3>
+    </div>
   </div>
 </ion-content>

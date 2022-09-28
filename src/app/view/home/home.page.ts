@@ -1,5 +1,4 @@
-import { Observable } from 'rxjs';
-import { Ligas } from '../../model/ligas';
+import { Times } from './../../model/times';
 import { ApiService } from './../../controller/api.service';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -10,28 +9,29 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 
 export class HomePage implements OnInit{
-  list: Ligas[] = [];
+  list: Times[] = [];
+  id: number;
   constructor(private http: ApiService, private route: Router, private router: ActivatedRoute) {}
 
   ngOnInit(){
     this.getNames();
   }
 
-    getNames(){
-    this.http.getAll().subscribe(data => {
-      data.leagues.forEach(el => {
+  getNames(){
+    this.http.getAllTeams().subscribe(data => {
+      data.data.forEach(el => {
         this.list.push({
-          id: el.id,
+          id: el.team_id,
           name: el.name,
-          country: el.country,
+          shortCode: el.short_code,
           logo: el.logo,
-          teams: el.teams
+          country: el.country
         });
       });
     });
   }
 
-  openDetails(teams){
-    this.route.navigate(['/teams'], {queryParams: teams});
+  redirectToTeamsPage(id){
+    this.route.navigate(['info'], {queryParams: id});
   }
 }

@@ -1,9 +1,8 @@
-import { element } from 'protractor';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Times } from '../../model/times';
 import { ApiService } from '../../controller/api.service';
 import { Component, OnInit } from '@angular/core';
 import { NavParams } from '@ionic/angular';
+import { Times } from 'src/app/model/times';
 
 @Component({
   selector: 'app-teams-list',
@@ -11,12 +10,11 @@ import { NavParams } from '@ionic/angular';
   styleUrls: ['./teams-list.component.scss'],
 })
 export class TeamsListComponent implements OnInit {
-  teamsList: any;
-  teams: Times[] = [];
+  teamInfo: any;
+
   constructor(private http: ApiService, private route: Router, private router: ActivatedRoute, private nav: NavParams) { }
 
 ngOnInit() {
-   this.teamsList = this.route.getCurrentNavigation().extras.queryParams;
-   this.teams = this.teamsList.map(el => el.name);
+  this.teamInfo = this.route.getCurrentNavigation().extras.queryParams;
 }
 }

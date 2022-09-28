@@ -1,8 +1,9 @@
+import { Pais } from './pais';
+
 export interface Times{
-    id: string;
+    id: number;
     name: string;
-    city: string;
-    founded: number;
-    details: string;
+    shortCode: string;
     logo: string;
+    country: Pais;
 }

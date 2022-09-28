@@ -9,7 +9,7 @@ const routes: Routes = [
     component: HomePage,
   },
   {
-  path: 'teams',
+  path: 'info',
   component: TeamsListComponent
 }
 ];

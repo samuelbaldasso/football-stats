@@ -1,15 +1,14 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-     Ligas de futebol
+      SOCCER TEAMS
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <div id="container" *ngFor="let item of list" (click)="openDetails(item.teams)">
+  <div id="container" *ngFor="let item of list" (click)="redirectToTeamsPage(item)">
     <button>
-      <img src="{{item.logo}}" alt="">
       {{item.name}}
     </button>
   </div>
