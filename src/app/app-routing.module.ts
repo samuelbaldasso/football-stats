@@ -2,10 +2,18 @@ import { HomePage } from './view/home/home.page';
 import { TeamsListComponent } from './view/teams-list/teams-list.component';
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { PlayersListComponent } from './view/players-list/players-list.component';
+import { IntroComponent } from './view/intro/intro.component';
+import { PlayersInfoComponent } from './view/players-info/players-info.component';
 
 const routes: Routes = [
   {
-    path: 'home',
+    path: 'intro',
+    component: IntroComponent,
+    loadChildren: () => import('./view/home/home.module').then( m => m.HomePageModule)
+  },
+  {
+    path: 'teams',
     component: HomePage,
     loadChildren: () => import('./view/home/home.module').then( m => m.HomePageModule)
   },
@@ -15,8 +23,18 @@ const routes: Routes = [
     loadChildren: () => import('./view/home/home.module').then( m => m.HomePageModule)
   },
   {
+    path: 'player',
+    component: PlayersListComponent,
+    loadChildren: () => import('./view/home/home.module').then( m => m.HomePageModule)
+  },
+  {
+    path: 'player-info',
+    component: PlayersInfoComponent,
+    loadChildren: () => import('./view/home/home.module').then( m => m.HomePageModule)
+  },
+  {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'intro',
     pathMatch: 'full'
   },
 ];
