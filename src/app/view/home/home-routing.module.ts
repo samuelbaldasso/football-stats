@@ -1,3 +1,4 @@
+import { SplashComponent } from './../splash/splash.component';
 import { PlayersInfoComponent } from './../players-info/players-info.component';
 import { IntroComponent } from './../intro/intro.component';
 import { PlayersListComponent } from './../players-list/players-list.component';
@@ -9,7 +10,11 @@ import { HomePage } from './home.page';
 const routes: Routes = [
   {
     path: '',
-    component: IntroComponent
+    component: SplashComponent
+  },
+  {
+    path: 'intro',
+    component: IntroComponent,
   },
   {
     path: 'teams',

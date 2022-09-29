@@ -1,7 +1,7 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/controller/api.service';
-import { Jogador } from 'src/app/model/jogador';
+import { faArrowLeft, faArrows } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-players-info',
@@ -10,6 +10,7 @@ import { Jogador } from 'src/app/model/jogador';
 })
 export class PlayersInfoComponent implements OnInit {
     playerInfo: any;
+    faArrow = faArrowLeft;
     constructor(private http: ApiService, private route: Router) { }
 
     ngOnInit() {

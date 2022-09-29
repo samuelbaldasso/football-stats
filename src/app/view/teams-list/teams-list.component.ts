@@ -2,7 +2,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from '../../controller/api.service';
 import { Component, OnInit } from '@angular/core';
 import { NavParams } from '@ionic/angular';
-import { Times } from 'src/app/model/times';
+import { faArrowLeft, faArrows } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-teams-list',
@@ -11,7 +11,7 @@ import { Times } from 'src/app/model/times';
 })
 export class TeamsListComponent implements OnInit {
   teamInfo: any;
-
+  faArrow = faArrowLeft;
   constructor(private http: ApiService, private route: Router, private router: ActivatedRoute, private nav: NavParams) { }
 
 ngOnInit() {

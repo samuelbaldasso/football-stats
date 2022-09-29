@@ -7,8 +7,9 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HomePageRoutingModule } from './home-routing.module';
+import { SplashComponent } from '../splash/splash.component';
 
 
 @NgModule({
@@ -16,8 +17,9 @@ import { HomePageRoutingModule } from './home-routing.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
+    HomePageRoutingModule,
+    FontAwesomeModule
   ],
-  declarations: [HomePage, TeamsListComponent, PlayersListComponent, IntroComponent, PlayersInfoComponent]
+  declarations: [HomePage, TeamsListComponent, PlayersListComponent, IntroComponent, SplashComponent, PlayersInfoComponent]
 })
 export class HomePageModule {}

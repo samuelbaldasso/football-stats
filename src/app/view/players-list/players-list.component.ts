@@ -2,6 +2,7 @@ import { Router } from '@angular/router';
 import { Jogador } from './../../model/jogador';
 import { ApiService } from './../../controller/api.service';
 import { Component, OnInit } from '@angular/core';
+import { faArrowLeft, faArrows } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-players-list',
@@ -10,6 +11,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlayersListComponent implements OnInit {
   player: Jogador[] = [];
+  faArrow = faArrowLeft;
   constructor(private http: ApiService, private route: Router) { }
 
   ngOnInit() {
