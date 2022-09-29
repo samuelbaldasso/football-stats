@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import { PlayersInfoComponent } from './../players-info/players-info.component';
 import { IntroComponent } from './../intro/intro.component';
 import { PlayersListComponent } from './../players-list/players-list.component';
@@ -10,6 +11,8 @@ import { HomePage } from './home.page';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HomePageRoutingModule } from './home-routing.module';
 import { SplashComponent } from '../splash/splash.component';
+import { FilterPipe } from 'src/app/controller/filter.pipe';
+import { FilterTeamsPipe } from 'src/app/controller/filterTeams.pipe';
 
 
 @NgModule({
@@ -20,6 +23,7 @@ import { SplashComponent } from '../splash/splash.component';
     HomePageRoutingModule,
     FontAwesomeModule
   ],
-  declarations: [HomePage, TeamsListComponent, PlayersListComponent, IntroComponent, SplashComponent, PlayersInfoComponent]
+  declarations: [FilterPipe, FilterTeamsPipe, HomePage,
+    TeamsListComponent, PlayersListComponent, IntroComponent, SplashComponent, PlayersInfoComponent]
 })
 export class HomePageModule {}

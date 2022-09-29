@@ -12,10 +12,12 @@ import { faArrowLeft, faArrows } from '@fortawesome/free-solid-svg-icons';
 export class PlayersListComponent implements OnInit {
   player: Jogador[] = [];
   faArrow = faArrowLeft;
+  searchText = '';
+
   constructor(private http: ApiService, private route: Router) { }
 
   ngOnInit() {
-    this.http.getAllInfoTeam().subscribe(data => {
+   this.http.getAllInfoTeam().subscribe(data => {
       data.data.forEach(element => {
         this.player.push({
           id: element.player_id,
@@ -34,5 +36,5 @@ export class PlayersListComponent implements OnInit {
 
   redirectToPlayersPage(id){
     this.route.navigate(['player-info'], {queryParams: id});
-  }
+}
 }

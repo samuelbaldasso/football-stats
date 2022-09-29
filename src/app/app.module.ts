@@ -1,3 +1,4 @@
+import { FilterPipe } from './controller/filter.pipe';
 import { SplashScreen } from '@awesome-cordova-plugins/splash-screen/ngx';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';

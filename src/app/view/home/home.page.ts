@@ -14,7 +14,8 @@ export class HomePage implements OnInit{
   list: Times[] = [];
   id: number;
   faArrow = faArrowLeft;
-  constructor(private http: ApiService, private route: Router, private router: ActivatedRoute) {}
+  searchText = '';
+    constructor(private http: ApiService, private route: Router, private router: ActivatedRoute) {}
 
   ngOnInit(){
     this.getNames();
