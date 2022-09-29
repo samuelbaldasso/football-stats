@@ -8,7 +8,8 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <div id="container" *ngFor="let item of player" (click)="redirectToPlayersPage(item)">
+  <input class="filter" type="text" placeholder="Search players" id="search-text" aria-describedby="search-text" [(ngModel)]="searchText">
+  <div id="container" *ngFor="let item of player | filter: searchText" (click)="redirectToPlayersPage(item)">
     <button>
       {{item.firstname}}
     </button>
