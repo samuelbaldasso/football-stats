@@ -1,17 +1,19 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <fa-icon [icon]="faArrow" routerLink="/intro"></fa-icon>
-    <ion-title>
-      Teams
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<div class="cont">
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <fa-icon [icon]="faArrow" routerLink="/intro"></fa-icon>
+      <ion-title>
+        Teams
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
 
-<ion-content [fullscreen]="true">
-  <input class="filter" type="text" placeholder="Search teams" id="search-text" aria-describedby="search-text" [(ngModel)]="searchText">
-  <div id="container" *ngFor="let item of list | filterTeams: searchText" (click)="redirectToTeamsPage(item)">
-    <button>
-      {{item.name}}
-    </button>
-  </div>
-</ion-content>
+  <ion-content [fullscreen]="true">
+    <input class="filter" type="text" placeholder="Search teams" id="search-text" aria-describedby="search-text" [(ngModel)]="searchText">
+    <div id="container" *ngFor="let item of list | filterTeams: searchText" (click)="redirectToTeamsPage(item)">
+      <button>
+        {{item.name}}
+      </button>
+    </div>
+  </ion-content>
+</div>
