@@ -6,11 +6,10 @@
 }
 
 ion-content{
-  --ion-background-color: #122215;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+ --ion-background-color: #122215;
+ display: flex;
+ flex-direction: column;
+ gap: 24px;
 }
 
 button{
@@ -18,7 +17,7 @@ button{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 12px;
+  margin-top: 48px;
   color: #122215;
   border-radius: 20px;
   background-color: whitesmoke;
@@ -33,11 +32,51 @@ button:hover{
 
 fa-icon{
   padding: 12px;
+  position: absolute;
+  top: 8px;
 }
 
 .filter{
   padding: 12px;
   margin: 12px;
   width: 350px;
+  display: flex;
+  align-items: center;
   text-align: center;
+  position: fixed;
+  z-index: 11;
+}
+
+ion-title{
+  text-align: center;
+}
+
+@media screen and (max-width: 320px){
+  .filter{
+    width: 295px;
+  }
+}
+
+@media screen and (min-width: 425px){
+  .filter{
+    width: 400px;
+  }
+}
+
+@media screen and (min-width: 768px){
+  .filter{
+    width: 745px;
+  }
+}
+
+@media screen and (min-width: 1024px){
+  .filter{
+    width: 1000px;
+  }
+}
+
+@media screen and (min-width: 1440px){
+  .filter{
+    width: 1415px;
+  }
 }
