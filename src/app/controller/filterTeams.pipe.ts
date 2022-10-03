@@ -1,4 +1,3 @@
-import { Jogador } from './../model/jogador';
 import { Pipe, PipeTransform } from '@angular/core';
 import { Times } from './../model/times';
 

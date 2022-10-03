@@ -6,7 +6,11 @@ img
 
 .brazil{
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 24px;
+  border-radius: 20px;
   margin: auto;
+  background-color: aquamarine;
 }
