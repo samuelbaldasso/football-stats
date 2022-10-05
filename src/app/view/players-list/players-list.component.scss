@@ -6,18 +6,16 @@
   margin: 12px;
 }
 
-ion-app, ion-content{
+ion-content{
   --ion-background-color: #122215;
 }
 
 .content-field{
-  position: fixed;
-  display: flex;
+  background-color: #122215;
 }
 
 .listInfo{
   display: flex;
-  margin-top: 64px;
   flex-direction: column;
   overflow: hidden;
 }

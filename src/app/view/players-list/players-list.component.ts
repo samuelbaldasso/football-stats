@@ -20,21 +20,6 @@ export class PlayersListComponent implements OnInit {
   constructor(private http: ApiService, private route: Router) { }
 
   ngOnInit() {
-   this.http.getAllInfoTeam().subscribe(data => {
-      data.data.forEach(element => {
-        this.player.push({
-          id: element.player_id,
-          firstname: element.firstname,
-          lastname: element.lastname,
-          birthday: element.birthday,
-          age: element.age,
-          weight: element.weight,
-          height: element.height,
-          img: element.img,
-          country: element.country
-        });
-      });
-    });
   }
 
   redirectToPlayersPage(id){

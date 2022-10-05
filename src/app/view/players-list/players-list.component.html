@@ -6,23 +6,23 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-content>
-    <div class="content-field">
-      <div class="field">
-        <p class="control has-icons-left">
-          <input
-            class="input"
-            type="text"
-            placeholder="Search players"
-            [(ngModel)]="searchText"
-          />
-          <span class="icon is-small is-left">
-            <fa-icon [icon]="faSearch"></fa-icon>
-          </span>
-        </p>
-      </div>
+  <div class="content-field">
+    <div class="field">
+      <p class="control has-icons-left">
+        <input
+          class="input"
+          type="text"
+          placeholder="Search players"
+          [(ngModel)]="searchText"
+        />
+        <span class="icon is-small is-left">
+          <fa-icon [icon]="faSearch"></fa-icon>
+        </span>
+      </p>
     </div>
+  </div>
 
+  <ion-content>
     <div class="listInfo">
       <div
         class="list"
