@@ -26,7 +26,7 @@ const routes: Routes = [
 },
 {
   path: 'player',
-  component: PlayersListComponent
+  component: PlayersListComponent,
 },
 {
   path: 'player-info',

@@ -23,6 +23,7 @@ ion-content{
   border-radius: 20px;
   background-color: whitesmoke;
   padding: 24px;
+  gap: 12px;
   width: 300px;
 }
 
@@ -36,4 +37,5 @@ fa-icon{
 
 ion-title{
   text-align: center;
+  padding: 0;
 }

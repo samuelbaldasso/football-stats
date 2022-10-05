@@ -9,7 +9,6 @@ ion-content{
  --ion-background-color: #122215;
  display: flex;
  flex-direction: column;
- gap: 24px;
 }
 
 button{
@@ -17,7 +16,6 @@ button{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 48px;
   color: #122215;
   border-radius: 20px;
   background-color: whitesmoke;
@@ -49,32 +47,78 @@ ion-title{
   text-align: center;
 }
 
-@media screen and (max-width: 320px){
-  .filter{
-    width: 295px;
-  }
+.list{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 12px;
 }
 
-@media screen and (min-width: 425px){
-  .filter{
-    width: 400px;
-  }
+ion-app, ion-content{
+  --ion-background-color: #122215;
 }
 
-@media screen and (min-width: 768px){
-  .filter{
-    width: 745px;
-  }
+.content-field{
+  position: fixed;
+  display: flex;
 }
 
-@media screen and (min-width: 1024px){
-  .filter{
-    width: 1000px;
-  }
+.listInfo{
+  display: flex;
+  margin-top: 64px;
+  flex-direction: column;
+  overflow: hidden;
 }
 
-@media screen and (min-width: 1440px){
-  .filter{
-    width: 1415px;
-  }
+button{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #122215;
+  border-radius: 20px;
+  background-color: whitesmoke;
+  padding: 24px;
+  width: 300px;
 }
+
+button:hover{
+  background-color: #142536;
+  color: whitesmoke;
+}
+
+.arrow{
+  padding: 12px;
+}
+
+.field{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 12px;
+}
+
+.input{
+  width: 370px;
+}
+
+ion-title{
+  text-align: center;
+  display: flex;
+  padding: 0;
+  align-items: center;
+  justify-content: space-between;
+}
+
+img{
+  width: 36px;
+  height: 36px;
+  margin-bottom: 8px;
+}
+
+.person{
+  width: 36px;
+  height: 36px;
+}
+

@@ -24,14 +24,15 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+@import "../node_modules/bulma/bulma.sass";
 
-body{
+ion-content {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-h1{
+h1, h2, h3, p, input, button, ion-title{
   font-family: 'Inter Tight', sans-serif;
-  font-weight: 900;
+  font-weight: 700;
 }
