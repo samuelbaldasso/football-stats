@@ -17,10 +17,9 @@ export class HomePage implements OnInit{
   faSearch = faSearch;
   faTeams = faPerson;
   searchText = '';
-    constructor(private http: ApiService, private route: Router, private router: ActivatedRoute) {}
+  constructor(private http: ApiService, private route: Router, private router: ActivatedRoute) {}
 
   ngOnInit(){
-    this.getNames();
   }
 
   getNames(){
