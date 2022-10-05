@@ -1,19 +1,46 @@
-<div class="cont">
-  <ion-header [translucent]="true">
+<ion-header [translucent]="true">
     <ion-toolbar>
       <fa-icon [icon]="faArrow" routerLink="/intro"></fa-icon>
-      <ion-title>
-        Teams
-      </ion-title>
+      <ion-title> Teams </ion-title>
     </ion-toolbar>
   </ion-header>
 
   <ion-content [fullscreen]="true">
-    <input class="filter" type="text" placeholder="Search teams" id="search-text" aria-describedby="search-text" [(ngModel)]="searchText">
-    <div id="container" *ngFor="let item of list | filterTeams: searchText" (click)="redirectToTeamsPage(item)">
-      <button>
-        {{item.name}}
-      </button>
+    <div class="content-field">
+      <div class="field">
+        <p class="control has-icons-left">
+          <input
+            class="input"
+            type="text"
+            placeholder="Search players"
+            [(ngModel)]="searchText"
+          />
+          <span class="icon is-small is-left">
+            <fa-icon [icon]="faSearch"></fa-icon>
+          </span>
+        </p>
+      </div>
     </div>
+
+    <div class="listInfo">
+      <div
+        class="list"
+        *ngFor="let item of list | filterTeams: searchText"
+        (click)="redirectToTeamsPage(item)"
+      >
+        <button>
+          <img *ngIf="item.logo" src="{{item.logo}}" alt="" />
+          <fa-icon *ngIf="!item.logo" [icon]="faTeams"></fa-icon>
+          {{item.name}}
+        </button>
+      </div>
+    </div>
+
+    <ion-infinite-scroll threshold="30%" (ionInfinite)="loadData($event)">
+      <ion-infinite-scroll-content
+        loadingSpinner="bubbles"
+        loadingText="Loading more data..."
+      >
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
   </ion-content>
-</div>

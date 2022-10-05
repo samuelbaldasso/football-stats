@@ -24,6 +24,7 @@ import { FilterTeamsPipe } from 'src/app/controller/filterTeams.pipe';
     FontAwesomeModule
   ],
   declarations: [FilterPipe, FilterTeamsPipe, HomePage,
-    TeamsListComponent, PlayersListComponent, IntroComponent, SplashComponent, PlayersInfoComponent]
+    TeamsListComponent, PlayersListComponent, IntroComponent, SplashComponent,
+    PlayersInfoComponent]
 })
 export class HomePageModule {}

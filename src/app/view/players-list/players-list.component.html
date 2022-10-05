@@ -1,17 +1,48 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <fa-icon [icon]="faArrow" routerLink="/intro"></fa-icon>
-    <ion-title>
-      Players
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<div class="ion-page">
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <fa-icon [icon]="faArrow" class="arrow" routerLink="/intro"></fa-icon>
+      <ion-title> Players </ion-title>
+    </ion-toolbar>
+  </ion-header>
 
-<ion-content [fullscreen]="true">
-  <input class="filter" type="text" placeholder="Search players" id="search-text" aria-describedby="search-text" [(ngModel)]="searchText">
-  <div id="container" *ngFor="let item of player | filter: searchText" (click)="redirectToPlayersPage(item)">
-    <button>
-      {{item.firstname}}
-    </button>
-  </div>
-</ion-content>
+  <ion-content>
+    <div class="content-field">
+      <div class="field">
+        <p class="control has-icons-left">
+          <input
+            class="input"
+            type="text"
+            placeholder="Search players"
+            [(ngModel)]="searchText"
+          />
+          <span class="icon is-small is-left">
+            <fa-icon [icon]="faSearch"></fa-icon>
+          </span>
+        </p>
+      </div>
+    </div>
+
+    <div class="listInfo">
+      <div
+        class="list"
+        *ngFor="let item of player | filter: searchText"
+        (click)="redirectToPlayersPage(item)"
+      >
+        <button>
+          <img *ngIf="item.img" src="{{ item.img }}" alt="" />
+          <fa-icon class="person" *ngIf="!item.img" [icon]="faPerson"></fa-icon>
+          {{ item.firstname }}
+        </button>
+      </div>
+    </div>
+
+    <ion-infinite-scroll threshold="30%" (ionInfinite)="loadData($event)">
+      <ion-infinite-scroll-content
+        loadingSpinner="bubbles"
+        loadingText="Loading more data..."
+      >
+      </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </ion-content>
+</div>

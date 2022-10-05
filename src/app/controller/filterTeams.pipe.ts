@@ -3,11 +3,15 @@ import { Times } from './../model/times';
 
 @Pipe({ name: 'filterTeams' })
 export class FilterTeamsPipe implements PipeTransform {
-    transform(teams: Times[], searchText: string) {
-        if(teams.length === 0 || searchText === ''){
-          return teams;
-        }else{
-          return teams.filter((team) => team.name.toLowerCase() === searchText.toLowerCase());
+      transform(items: Times[], searchText: string): any[] {
+        if (!items) {
+          return [];
         }
+        if (!searchText) {
+          return items;
+        }
+        searchText = searchText.toLowerCase();
+
+        return items.filter(it => it.name.toLowerCase().includes(searchText));
       }
   }
