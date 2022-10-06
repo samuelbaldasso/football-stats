@@ -5,14 +5,8 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { PlayersListComponent } from './view/players-list/players-list.component';
 import { IntroComponent } from './view/intro/intro.component';
 import { PlayersInfoComponent } from './view/players-info/players-info.component';
-import { SplashComponent } from './view/splash/splash.component';
 
 const routes: Routes = [
-  {
-    path: 'splash',
-    component: SplashComponent,
-    loadChildren: () => import('./view/home/home.module').then( m => m.HomePageModule)
-  },
   {
     path: 'intro',
     component: IntroComponent,
@@ -40,7 +34,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'splash',
+    redirectTo: 'intro',
     pathMatch: 'full'
   },
 ];

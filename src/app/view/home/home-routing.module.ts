@@ -1,4 +1,3 @@
-import { SplashComponent } from './../splash/splash.component';
 import { PlayersInfoComponent } from './../players-info/players-info.component';
 import { IntroComponent } from './../intro/intro.component';
 import { PlayersListComponent } from './../players-list/players-list.component';
@@ -8,10 +7,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomePage } from './home.page';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: SplashComponent
-  },
   {
     path: 'intro',
     component: IntroComponent,

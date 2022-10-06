@@ -10,7 +10,6 @@ import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { HomePageRoutingModule } from './home-routing.module';
-import { SplashComponent } from '../splash/splash.component';
 import { FilterPipe } from 'src/app/controller/filter.pipe';
 import { FilterTeamsPipe } from 'src/app/controller/filterTeams.pipe';
 
@@ -24,7 +23,7 @@ import { FilterTeamsPipe } from 'src/app/controller/filterTeams.pipe';
     FontAwesomeModule
   ],
   declarations: [FilterPipe, FilterTeamsPipe, HomePage,
-    TeamsListComponent, PlayersListComponent, IntroComponent, SplashComponent,
+    TeamsListComponent, PlayersListComponent, IntroComponent,
     PlayersInfoComponent]
 })
 export class HomePageModule {}

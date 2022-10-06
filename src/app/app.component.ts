@@ -1,16 +1,21 @@
-import { Router } from '@angular/router';
-import { Platform } from '@ionic/angular';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { SplashScreen } from '@capacitor/splash-screen';
 
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
 })
-export class AppComponent {
-  constructor(private platform: Platform, private router: Router) {
-    this.platform.ready().then(() => {
-      this.router.navigateByUrl('splash');
-    });
+export class AppComponent implements OnInit {
+  constructor() {
+  }
+  ngOnInit(){
+    this.splashScreen();
+  }
+
+  private splashScreen(): void {
+    setTimeout(() => {
+      SplashScreen.hide();
+    }, 6000);
   }
 }
