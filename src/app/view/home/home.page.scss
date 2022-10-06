@@ -78,7 +78,7 @@ button{
   border-radius: 20px;
   background-color: whitesmoke;
   padding: 24px;
-  width: 300px;
+  width: 250px;
 }
 
 button:hover{
@@ -86,7 +86,7 @@ button:hover{
   color: whitesmoke;
 }
 
-.arrow{
+.arrow, .fa{
   padding: 12px;
 }
 
@@ -98,7 +98,7 @@ button:hover{
 }
 
 .input{
-  width: 370px;
+  width: 300px;
 }
 
 ion-title{
@@ -120,3 +120,6 @@ img{
   height: 36px;
 }
 
+.fa{
+  margin-bottom: 12px;
+}

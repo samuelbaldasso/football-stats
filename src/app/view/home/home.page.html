@@ -29,8 +29,7 @@
         (click)="redirectToTeamsPage(item)"
       >
         <button>
-          <img *ngIf="item.logo" src="{{item.logo}}" alt="" />
-          <fa-icon *ngIf="!item.logo" [icon]="faTeams"></fa-icon>
+          <fa-icon class="fa" [icon]="faTeams"></fa-icon>
           {{item.name}}
         </button>
       </div>

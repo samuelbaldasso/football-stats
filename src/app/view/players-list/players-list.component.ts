@@ -43,6 +43,11 @@ export class PlayersListComponent implements OnInit {
             country: element.country
           });
         });
+        if(data.length <= 923){
+          event.target.complete();
+        } else {
+          event.target.disabled = true;
+        }
     });
     }, 500);
   }
