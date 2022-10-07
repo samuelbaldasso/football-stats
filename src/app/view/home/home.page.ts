@@ -20,30 +20,20 @@ export class HomePage implements OnInit{
   constructor(private http: ApiService, private route: Router, private router: ActivatedRoute) {}
 
   ngOnInit(){
-  }
+    this.http.getAllTeams().subscribe(data => {
+      data.data.forEach(el => {
+        this.list.push({
+          id: el.team_id,
+          name: el.name,
+          shortCode: el.short_code,
+          logo: el.logo,
+          country: el.country
+        });
+      });
+  });
+}
 
   redirectToTeamsPage(id){
     this.route.navigate(['info'], {queryParams: id});
-  }
-
-  loadData(event) {
-    setTimeout(() => {
-      this.http.getAllTeams().subscribe(data => {
-        data.data.forEach(el => {
-          this.list.push({
-            id: el.team_id,
-            name: el.name,
-            shortCode: el.short_code,
-            logo: el.logo,
-            country: el.country
-          });
-        });
-        if(data.length <= 428){
-          event.target.complete();
-        } else {
-          event.target.disabled = true;
-        }
-      });
-    }, 500);
   }
 }
