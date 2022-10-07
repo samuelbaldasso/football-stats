@@ -38,7 +38,8 @@ button:hover{
 }
 
 .arrow{
-  padding: 12px;
+  position: absolute;
+  top: 4px;
 }
 
 .field{
@@ -56,8 +57,13 @@ ion-title{
   text-align: center;
   display: flex;
   padding: 0;
+  position: relative;
   align-items: center;
   justify-content: space-between;
+}
+
+fa-icon{
+  padding: 12px;
 }
 
 img{
