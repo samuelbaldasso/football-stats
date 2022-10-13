@@ -13,6 +13,11 @@ ion-content{
   justify-content: center;
 }
 
+.arrow{
+  position: absolute;
+  top: 4px;
+}
+
 #teamInfo{
   display: flex;
   flex-direction: column;
